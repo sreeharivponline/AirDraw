@@ -233,3 +233,74 @@ canvas {
   opacity: 0;
   pointer-events: none;
 }
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .glass-header {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  .controls {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  
+  .color-picker {
+    padding: 0.4rem;
+  }
+  
+  .color-btn {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .action-btn {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  
+  .main-container {
+    padding: 0.5rem;
+    align-items: flex-start;
+    padding-top: 2rem;
+  }
+  
+  .video-container {
+    border-radius: 12px;
+  }
+  
+  .instructions {
+    bottom: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .instructions h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .instructions ul {
+    gap: 0.5rem;
+  }
+  
+  .instructions li {
+    font-size: 0.85rem;
+    gap: 0.5rem;
+  }
+  
+  .icon {
+    width: 24px;
+    height: 24px;
+    font-size: 0.9rem;
+  }
+}
+
