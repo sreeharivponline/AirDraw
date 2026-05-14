@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AirDraw - AI Air Drawing</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <header class="glass-header">
+        <h1>AirDraw <span>AI</span></h1>
+        <div class="controls">
+          <div class="color-picker">
+            <button class="color-btn active" data-color="#00ffcc" style="background: #00ffcc;"></button>
+            <button class="color-btn" data-color="#ff00cc" style="background: #ff00cc;"></button>
+            <button class="color-btn" data-color="#ffcc00" style="background: #ffcc00;"></button>
+            <button class="color-btn" data-color="#00ccff" style="background: #00ccff;"></button>
+            <button class="color-btn" data-color="#ffffff" style="background: #ffffff;"></button>
+          </div>
+          <button id="clear-btn" class="action-btn">Clear Canvas</button>
+        </div>
+      </header>
+
+      <div class="main-container">
+        <div class="video-container">
+          <!-- Hidden video element for camera input -->
+          <video id="input_video" style="display: none;"></video>
+          
+          <!-- Canvas for drawing MediaPipe landmarks -->
+          <canvas id="output_canvas" class="output_canvas"></canvas>
+          
+          <!-- Canvas for the actual drawing -->
+          <canvas id="drawing_canvas" class="drawing_canvas"></canvas>
+          
+          <!-- Loading overlay -->
+          <div id="loading" class="loading-overlay">
+            <div class="spinner"></div>
+            <p>Initializing AI Camera...</p>
+          </div>
+          
+          <!-- Instructions overlay -->
+          <div id="instructions" class="instructions glass-panel">
+            <h3>How to use</h3>
+            <ul>
+              <li><span class="icon">🤏</span> <strong>Pinch</strong> index and thumb to draw</li>
+              <li><span class="icon">🖐️</span> <strong>Open hand</strong> to move without drawing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Load MediaPipe via CDN since npm packages can have resolution issues with Vite without plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+    
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
